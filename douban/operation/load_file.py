@@ -2,7 +2,7 @@
 import pandas as pd
 
 
-df = pd.read_csv("douban.csv", encoding="utf-8")
+df = pd.read_csv(r"D:\work\douban\douban.csv", encoding="utf-8")
 
 df_film = df["电影名称"]
 df_director = df["导演"]
@@ -96,16 +96,16 @@ film.to_csv('film.csv', index=False, encoding="utf-8_sig")
 
 # 生成导演节点文件
 director.columns = ['index:ID', 'director', ':LABEL']
-director.to_csv('director', index=False, encoding="utf-8_sig")
+director.to_csv('director.csv', index=False, encoding="utf-8_sig")
 
 # 生成演员节点文件
 actor.columns = ['index:ID', 'actor', ':LABEL']
-director.to_csv('actor', index=False, encoding="utf-8_sig")
+actor.to_csv('actor.csv', index=False, encoding="utf-8_sig")
 
 # 生成类型节点文件
 types.columns = ['index:ID', 'types', ':LABEL']
-types.to_csv('types', index=False, encoding="utf-8_sig")
+types.to_csv('types.csv', index=False, encoding="utf-8_sig")
 
 
 # 读取以上生成的结点文件
-df = pd.read_csv('douban.csv', encoding="utf-8")
+# df = pd.read_csv('douban.csv', encoding="utf-8")
